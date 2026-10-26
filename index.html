@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignment 5 – JavaScript Basics</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Assignment 5 – DOM &amp; Events</h1></header>
+<main>
+  <section id="game">
+    <h2>Task 1. Higher or Lower</h2>
+    <p>Will the next movie's rating (1–10) be higher or lower? Equal counts as right.</p>
+    <div id="g-card" class="card"></div>
+    <p id="g-stats"></p>
+    <form id="g-form" class="row" novalidate>
+      <label>Type your guess <input id="g-input" type="text" autocomplete="off" placeholder="higher / lower (or h / l)"></label>
+      <button type="submit">Guess</button>
+    </form>
+    <div class="row">
+      <button id="g-higher" type="button">Higher</button>
+      <button id="g-lower" type="button">Lower</button>
+      <button id="g-restart" type="button" hidden>Restart</button>
+    </div>
+    <p id="g-status" role="status"></p>
+  </section>
+
+  <section id="kanban">
+    <h2>Task 2. Kanban board</h2>
+    <div class="row">
+      <label>Tag <select id="k-tag"></select></label>
+      <button id="k-sort" type="button" aria-pressed="false">Sort by priority</button>
+    </div>
+    <form id="k-form" class="row" novalidate>
+      <label>New card <input id="k-title" type="text" autocomplete="off" placeholder="Card title"></label>
+      <label>Tag <select id="k-newtag"><option>design</option><option>code</option><option>content</option></select></label>
+      <label>Priority <select id="k-prio"><option>1</option><option>2</option><option>3</option></select></label>
+      <button type="submit">Add card</button>
+    </form>
+    <progress id="k-progress" value="0" max="1"></progress> <span id="k-ptext"></span>
+    <p id="k-msg" role="status" class="bad"></p>
+    <div id="board" class="board"></div>
+  </section>
+
+  <section id="ticket">
+    <h2>Task 3. Ticket builder</h2>
+    <div class="two">
+      <form id="t-form" novalidate>
+        <p id="t-summary" class="summary" role="alert"></p>
+        <label>Event <select name="event" required><option>Rock Night</option><option>Jazz Evening</option><option>Stand-up Show</option></select></label>
+        <label>Date <input type="date" name="date" required aria-describedby="e-date"></label>
+        <small class="err" id="e-date"></small>
+        <label>Ticket type <select name="type" required><option value="standard">Standard</option><option value="vip">VIP</option><option value="student">Student</option></select></label>
+        <label>Quantity <input type="number" name="quantity" min="1" max="10" required aria-describedby="e-quantity"></label>
+        <small class="err" id="e-quantity"></small>
+        <label>Full name <input type="text" name="name" required minlength="3" aria-describedby="e-name"></label>
+        <small class="err" id="e-name"></small>
+        <label>E-mail <input type="email" name="email" required aria-describedby="e-email"></label>
+        <small class="err" id="e-email"></small>
+        <label>Promo code (optional) <input type="text" name="promo" aria-describedby="e-promo"></label>
+        <small class="err" id="e-promo"></small>
+        <button type="submit">Buy ticket</button>
+      </form>
+      <aside class="card" aria-live="polite">
+        <h3>Preview</h3>
+        <p>Event: <span id="p-event"></span></p>
+        <p>Date: <span id="p-date"></span></p>
+        <p>Type: <span id="p-type"></span></p>
+        <p>Quantity: <span id="p-qty"></span></p>
+        <p>Name: <span id="p-name"></span></p>
+        <p>Total: <strong id="p-total"></strong></p>
+      </aside>
+    </div>
+    <div id="t-result"></div>
+  </section>
+</main>
+<noscript><p class="bad">Please enable JavaScript.</p></noscript>
+<script src="task1.js" defer></script>
+<script src="task2.js" defer></script>
+<script src="task3.js" defer></script>
+</body>
+</html>
